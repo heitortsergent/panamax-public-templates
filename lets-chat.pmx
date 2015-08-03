@@ -1,0 +1,23 @@
+---
+name: lets-chat
+description: Let's Chat application by SD Elements
+keywords: letschat, sdelements, IM, team
+type: NodeJS
+documentation: ''
+images:
+- name: app
+  source: sdelements/lets-chat:latest
+  category: application
+  type: Default
+  ports:
+  - host_port: '8080'
+    container_port: '8080'
+  - host_port: '5222'
+    container_port: '5222'
+  links:
+  - service: mongo
+    alias: mongo
+- name: mongo
+  source: mongo:latest
+  category: application
+  type: Default
